@@ -1,0 +1,29 @@
+<h1>Listing doit_lists</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Description</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @doit_lists.each do |doit_list| %>
+      <tr>
+        <td><%= doit_list.title %></td>
+        <td><%= doit_list.description %></td>
+        <td><%= link_to 'Show', doit_list %></td>
+        <td><%= link_to 'Edit', edit_doit_list_path(doit_list) %></td>
+        <td><%= link_to 'Destroy', doit_list, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Doit list', new_doit_list_path %>
